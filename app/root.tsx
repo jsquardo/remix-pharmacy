@@ -1,4 +1,16 @@
-import { LiveReload, Outlet } from "@remix-run/react";
+import type { LinksFunction } from "@remix-run/node";
+import { Links, LiveReload, Outlet } from "@remix-run/react";
+
+import globalStylesUrl from "./styles/global.css";
+
+export const links: LinksFunction = () => {
+	return [
+		{
+			rel: "stylesheet",
+			href: globalStylesUrl,
+		},
+	];
+};
 
 export default function App() {
 	return (
@@ -6,6 +18,7 @@ export default function App() {
 			<head>
 				<meta charSet="utf-8" />
 				<title>Remix: So great, it's funny!</title>
+				<Links />
 			</head>
 			<body>
 				<Outlet />
