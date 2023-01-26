@@ -1,0 +1,2 @@
+# Filename: .graphqlrc.yml
+schema: node_modules/@shopify/storefront-kit-react/storefront.schema.json

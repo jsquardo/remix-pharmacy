@@ -1,8 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ["./app/**/*.{ts,tsx,jsx,js}"],
+	content: ["./app/**/*.{ts,tsx,jsx,js}", "node_modules/daisyui/dist/**/*.js"],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				inter: "Inter",
+			},
+		},
 	},
-	plugins: [],
+	plugins: [
+		"@tailwindcss/forms",
+		require("@tailwindcss/typography"),
+		require("prettier-plugin-tailwindcss"),
+		require("daisyui"),
+	],
 };
